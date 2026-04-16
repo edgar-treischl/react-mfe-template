@@ -2,11 +2,6 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import federation from '@originjs/vite-plugin-federation';
 
-const sharedModules: Record<string, { singleton: boolean }> = {
-  react: { singleton: true },
-  'react-dom': { singleton: true },
-};
-
 export default defineConfig({
   // IMPORTANT for GitHub Pages deployment
   base: '/app3/',
@@ -14,25 +9,26 @@ export default defineConfig({
   plugins: [
     react(),
     federation({
-      name: 'app3',
+      name: 'titanic-mfe',
       filename: 'remoteEntry.js',
       exposes: {
-        './HRApp': './src/App.tsx',
+        './App': './src/App.tsx',
       },
 
-      shared: sharedModules,
+      shared: ['react', 'react-dom']
+
     }),
   ],
 
   server: {
     host: true,
-    port: 5176,
+    port: 5174,
     cors: true,
   },
 
   preview: {
     host: true,
-    port: 5176,
+    port: 5174,
   },
 
   build: {
