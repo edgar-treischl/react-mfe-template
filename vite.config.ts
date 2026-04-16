@@ -4,12 +4,12 @@ import federation from '@originjs/vite-plugin-federation';
 
 export default defineConfig({
   // IMPORTANT for GitHub Pages deployment
-  base: '/app3/',
+  base: '/react-mfe-template/',
 
   plugins: [
     react(),
     federation({
-      name: 'titanic-mfe',
+      name: 'react-mfe-template',
       filename: 'remoteEntry.js',
       exposes: {
         './App': './src/App.tsx',
