@@ -8,9 +8,9 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
+    <div className="mfe-template">
+      <section className="mfe-template__center">
+        <div className="mfe-template__hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
           <img src={viteLogo} className="vite" alt="Vite logo" />
@@ -22,17 +22,17 @@ function App() {
           </p>
         </div>
         <button
-          className="counter"
+          className="mfe-template__button"
           onClick={() => setCount((count) => count + 1)}
         >
           Count is {count}
         </button>
       </section>
 
-      <div className="ticks"></div>
+      <div className="mfe-template__ticks"></div>
 
-      <section id="next-steps">
-        <div id="docs">
+      <section className="mfe-template__next-steps">
+        <div className="mfe-template__docs">
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#documentation-icon"></use>
           </svg>
@@ -112,9 +112,9 @@ function App() {
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <div className="mfe-template__ticks"></div>
+      <section className="mfe-template__spacer"></section>
+    </div>
   )
 }
 
